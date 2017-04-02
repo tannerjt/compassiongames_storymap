@@ -144,15 +144,25 @@ export const CrowdsourceWebmapController = class CrowdsourceWebmapController ext
               const containsAttachments = () => {
                 if (current.attachmentInfos && current.attachmentInfos.length >= 2) {
                   const thumbnail = current.attachmentInfos.filter((attachment) => {
-                    return attachment.name.search('PrimaryThumbnail') === 0;
+                    if (attachment.name.search('PrimaryThumbnail') === 0) {
+                      return true;
+                    } else if (attachment.name.search('thumbnail.png') === 0) {
+                      return true;
+                    }
+                    return false;
                   })[0];
                   const photo = current.attachmentInfos.filter((attachment) => {
-                    return attachment.name.search('PrimaryPhoto') === 0;
+                    if (attachment.name.search('PrimaryPhoto') === 0) {
+                      return true;
+                    } else if (attachment.name.search('optimized.png') === 0) {
+                      return true;
+                    }
+                    return false;
                   })[0];
 
                   if (thumbnail && photo) {
                     return true;
-                  }
+                  } 
                 }
                 return false;
               };
