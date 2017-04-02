@@ -54,7 +54,7 @@ const defaultServiceDefinition = {
 		xssPreventionRule: 'InputOnly',
 		xssInputRule: 'sanitizeInvalid'
 	},
-	maxRecordCount: 2000
+	maxRecordCount: 5000
 };
 
 const defaultLayerDefinition = {
