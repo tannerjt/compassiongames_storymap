@@ -53,6 +53,12 @@
     }
   }
 
+  .compassion-impact-list {
+    .value {
+      font-weight: bold;
+    }
+  }
+
   @media (max-width: 767px) {
     .selected-display {
       height: calc(100% -  44px);

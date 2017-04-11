@@ -68,7 +68,11 @@ export default class SelectedShares extends React.Component {
           <div className="info-section">
             <h4 className="share-title">{attributes[this.props.primaryField]}</h4>
             <p className="share-location-wrapper"><small className="share-location">{attributes[this.props.secondaryField]}</small></p>
-          { this.props.displayOrder.map(this.getFieldLayout.bind(this,attributes))}
+            { this.props.displayOrder.map(this.getFieldLayout.bind(this,attributes))}
+            <h4>Compassion Impact</h4>
+            <ul className="compassion-impact-list">
+              { this.props.tableDisplay.map(this.getTableLayout.bind(this, attributes))}
+            </ul>
           </div>
           {this.props.reviewEnabled ? (
             <div className="review-section alert alert-info">
@@ -146,6 +150,21 @@ export default class SelectedShares extends React.Component {
     this.setState({
       mediaLoaded: success ? true : 'failed'
     });
+  }
+
+  getTableLayout(attributes,current) {
+    // replace this later...
+    let fieldMap = { "numParticipants": "Volunteers/Players",
+      "hoursServed": "Hours Served",
+      "peopleServed": "People Served",
+      "moniesRaised": "Monies Raised"
+    };
+
+    if (typeof current === 'string' && attributes[current] !== null) {
+      return (
+        <li key={current}><span className="key">{fieldMap[current]}</span>: <span className="value">{attributes[current]}</span></li>
+      );
+    }
   }
 
   getFieldLayout(attributes,current) {
