@@ -224,7 +224,7 @@ export default class CrowdsourceForm extends React.Component {
     Object.keys(this.formItemStatus).forEach((current) => {
       //should look for only required...
       //manual intervention but fix later
-      if (!this.formItemStatus[current] && ["moniesRaised", "videoURL", "contactName"].indexOf(current) == -1) {
+      if (!this.formItemStatus[current] && ["moniesRaised", "videoURL", "contactName"].indexOf(current) === -1) {
         formValid = false;
       }
     });
