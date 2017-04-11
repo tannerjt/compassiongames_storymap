@@ -172,6 +172,7 @@ SelectedShares.propTypes = {
     attributes: React.PropTypes.shape({})
   }),
   displayOrder: React.PropTypes.array,
+  tableDisplay: React.PropTypes.array,
   attributePath: React.PropTypes.string.isRequired,
   idField: React.PropTypes.string.isRequired,
   primaryField: React.PropTypes.string.isRequired,
@@ -200,6 +201,7 @@ SelectedShares.defaultProps = {
     attributes: {}
   },
   displayOrder: [],
+  tableDisplay: [],
   thumbnailUrlPrepend: '',
   thumbnailUrlAppend: '',
   reviewEnabled: false,

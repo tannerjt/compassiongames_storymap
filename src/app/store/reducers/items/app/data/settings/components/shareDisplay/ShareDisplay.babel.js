@@ -5,7 +5,8 @@ const defaultDisplay = {
     type: 'photo',
     field: 'PrimaryPhoto'
   },
-  displayOrder: ['Description']
+  displayOrder: ['Description'],
+  tableDisplay: ['numParticipants', "hoursServed", "peopleServed", "moniesRaised"]
 };
 
 export const shareDisplay = function (state = defaultDisplay, action) {
