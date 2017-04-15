@@ -173,6 +173,10 @@ export default class SelectedShares extends React.Component {
         const fieldClasses = Helper.classnames(['field-display', 'field-' + current]);
         const fieldProps = this.props.fields[current];
 
+        if (fieldProps && current === 'videoURL') {
+          return (<a href={attributes[current]} target="_blank" key={current} className={fieldClasses}>View More</a>);
+        }
+
         if (fieldProps && fieldProps.type === 'textarea') {
           return (<Autolinker key={current} className={fieldClasses} text={attributes[current]}></Autolinker>);
         } else {

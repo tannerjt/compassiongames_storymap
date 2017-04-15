@@ -13,6 +13,8 @@
   <link type="image/ico" rel="shortcut icon" href="resources/images/favicon.ico">
   <link type="image/ico" rel="icon"  href="resources/images/favicon.ico">
 
+  <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+
   <!-- htmlmin:ignore -->
   <!--
     To correctly reference your Story Maps Crowdsource App in search engine:
