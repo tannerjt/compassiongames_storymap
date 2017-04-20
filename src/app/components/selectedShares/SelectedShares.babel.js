@@ -76,6 +76,7 @@ export default class SelectedShares extends React.Component {
           rejectAction={this.props.rejectAction}
           feature={this.props.feature}
           displayOrder={this.props.displayOrder}
+          tableDisplay={this.props.tableDisplay}
           attributePath={this.props.attributePath}
           fields={this.props.fields}
           idField={this.props.idField}
@@ -131,6 +132,7 @@ SelectedShares.propTypes = {
     attributes: React.PropTypes.shape({})
   }),
   displayOrder: React.PropTypes.array,
+  tableDisplay: React.PropTypes.array,
   attributePath: React.PropTypes.string.isRequired,
   fields: React.PropTypes.shape({}),
   idField: React.PropTypes.string.isRequired,
@@ -160,6 +162,7 @@ SelectedShares.defaultProps = {
     attributes: {}
   },
   displayOrder: [],
+  tableDisplay: [],
   thumbnailUrlPrepend: '',
   thumbnailUrlAppend: '',
   reviewEnabled: false,

@@ -68,7 +68,11 @@ export default class SelectedShares extends React.Component {
           <div className="info-section">
             <h4 className="share-title">{attributes[this.props.primaryField]}</h4>
             <p className="share-location-wrapper"><small className="share-location">{attributes[this.props.secondaryField]}</small></p>
-          { this.props.displayOrder.map(this.getFieldLayout.bind(this,attributes))}
+            { this.props.displayOrder.map(this.getFieldLayout.bind(this,attributes))}
+            <h4>Compassion Impact</h4>
+            <ul className="compassion-impact-list">
+              { this.props.tableDisplay.map(this.getTableLayout.bind(this, attributes))}
+            </ul>
           </div>
           {this.props.reviewEnabled ? (
             <div className="review-section alert alert-info">
@@ -148,11 +152,30 @@ export default class SelectedShares extends React.Component {
     });
   }
 
+  getTableLayout(attributes,current) {
+    // replace this later...
+    let fieldMap = { "numParticipants": "Volunteers/Players",
+      "hoursServed": "Hours Served",
+      "peopleServed": "People Served",
+      "moniesRaised": "Monies Raised"
+    };
+
+    if (typeof current === 'string' && attributes[current] !== null) {
+      return (
+        <li key={current}><span className="key">{fieldMap[current]}</span>: <span className="value">{attributes[current]}</span></li>
+      );
+    }
+  }
+
   getFieldLayout(attributes,current) {
 
       if (typeof current === 'string') {
         const fieldClasses = Helper.classnames(['field-display', 'field-' + current]);
         const fieldProps = this.props.fields[current];
+
+        if (fieldProps && current === 'videoURL' && attributes[current]) {
+          return (<a href={attributes[current]} target="_blank" key={current} className={fieldClasses}>View More</a>);
+        }
 
         if (fieldProps && fieldProps.type === 'textarea') {
           return (<Autolinker key={current} className={fieldClasses} text={attributes[current]}></Autolinker>);
@@ -172,6 +195,7 @@ SelectedShares.propTypes = {
     attributes: React.PropTypes.shape({})
   }),
   displayOrder: React.PropTypes.array,
+  tableDisplay: React.PropTypes.array,
   attributePath: React.PropTypes.string.isRequired,
   idField: React.PropTypes.string.isRequired,
   primaryField: React.PropTypes.string.isRequired,
@@ -200,6 +224,7 @@ SelectedShares.defaultProps = {
     attributes: {}
   },
   displayOrder: [],
+  tableDisplay: [],
   thumbnailUrlPrepend: '',
   thumbnailUrlAppend: '',
   reviewEnabled: false,
