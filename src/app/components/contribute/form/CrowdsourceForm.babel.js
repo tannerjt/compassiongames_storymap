@@ -176,7 +176,7 @@ export default class CrowdsourceForm extends React.Component {
       }
     };
 
-    if (field.type === 'text' || field.type === 'textarea' || field.type === 'location') {
+    if (field.type === 'text' || field.type === 'textarea' || field.type === 'location' || field.type === 'number') {
       const maxLength = this.getFieldDefinitionValue(field.fieldID,'length');
       const options = {
         inputAttr: {
