@@ -36,6 +36,7 @@
     "urijs": "^1.18.0",
     "Autolinker.js": "^0.26.0",
     "xss": "^0.2.13",
-    "javascript-load-image": "^2.6.1"
+    "javascript-load-image": "^2.6.1",
+    "fancybox": "^3.0.47"
   }
 }
