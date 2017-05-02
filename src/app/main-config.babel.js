@@ -143,11 +143,11 @@
   _loadCSS(pathMods.resourcePath + 'app' + pathMods.mainCss + pathMods.cssBuilderPath + pathMods.bootstrapPath + pathMods.minPath + '.css');
   _loadJS('app/main-app' + pathMods.jsBuilderPath + pathMods.minPath + '.js');
 
-  // Enable Google Analytics on storymaps.esri.com
-  if (_isProduction && window.location.href.toLowerCase().indexOf('storymaps.esri.com') >= 0) {
+  // Enable Google Analytics on s3.amazonaws.com
+  if (_isProduction && window.location.href.toLowerCase().indexOf('s3.amazonaws.com') >= 0) {
     const _gaq = _gaq || [];
 
-    _gaq.push(['_setAccount', 'UA-26529417-1']);
+    _gaq.push(['_setAccount', 'UA-34357322-2']);
     _gaq.push(['_trackPageview']);
 
     (function() {

@@ -160,7 +160,7 @@ export default class SelectedShares extends React.Component {
       "moniesRaised": "Monies Raised"
     };
 
-    if (typeof current === 'string' && attributes[current] !== null) {
+    if (typeof current === 'string' && attributes[current] !== null && +attributes[current] > 0) {
       return (
         <li key={current}><span className="key">{fieldMap[current]}</span>: <span className="value">{attributes[current]}</span></li>
       );
@@ -174,7 +174,7 @@ export default class SelectedShares extends React.Component {
         const fieldProps = this.props.fields[current];
 
         if (fieldProps && current === 'videoURL' && attributes[current]) {
-          return (<a href={attributes[current]} target="_blank" key={current} className={fieldClasses}>View More</a>);
+          return (<a href={attributes[current]} target="_blank" key={current} className={fieldClasses}>View Link</a>);
         }
 
         if (fieldProps && fieldProps.type === 'textarea') {
