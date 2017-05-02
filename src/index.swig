@@ -14,6 +14,12 @@
   <link type="image/ico" rel="icon"  href="resources/images/favicon.ico">
 
   <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.2/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+  <style>
+    .featherlight-content {
+      overflow: hidden !important;
+    }
+  </style>
 
   <!-- htmlmin:ignore -->
   <!--

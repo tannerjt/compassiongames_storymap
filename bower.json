@@ -37,6 +37,7 @@
     "Autolinker.js": "^0.26.0",
     "xss": "^0.2.13",
     "javascript-load-image": "^2.6.1",
-    "fancybox": "^3.0.47"
+    "fancybox": "^3.0.47",
+    "featherlight": "^1.7.2"
   }
 }

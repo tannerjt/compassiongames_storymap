@@ -91,6 +91,7 @@
         clipboard: path1 + 'lib/clipboard/dist/clipboard',
         Autolinker: path1 + 'lib/Autolinker.js/dist/Autolinker',
         autosize: path1 + 'lib/autosize/dist/autosize',
+        featherlight: path1 + 'lib/featherlight/dist/featherlight',
         // AMD Plugins
         mode: path1 + 'build/app/utils/amd/plugins/AppMode'
       }

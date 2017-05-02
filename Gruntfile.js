@@ -282,6 +282,7 @@ module.exports = function (grunt) {
           clipboard: 'lib/clipboard/dist/clipboard.min',
           Autolinker: 'lib/Autolinker.js/dist/Autolinker.min',
           autosize: 'lib/autosize/dist/autosize.min',
+          featherlight: 'lib/featherlight/src/featherlight',
           // AMD Plugins
           mode: '../build/app/utils/amd/plugins/AppMode',
           i18n: 'lib/i18n/i18n'

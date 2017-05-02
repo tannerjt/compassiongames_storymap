@@ -1,6 +1,6 @@
 import React from 'react';
 import Helper from 'babel/utils/helper/Helper';
-import LazyImage from 'babel/components/helper/lazyImage/LazyImage';
+import Lightbox from 'babel/components/helper/lightbox/Lightbox';
 import Autolinker from 'babel/components/helper/autolinker/Autolinker';
 import viewerText from 'i18n!translations/viewer/nls/template';
 import builderText from 'mode!isBuilder?i18n!translations/builder/nls/template';
@@ -133,14 +133,14 @@ export default class SelectedShares extends React.Component {
 
         return (
           <div className="media-section">
-            <LazyImage
+            <Lightbox
               key={photoUrl}
               className="media-photo"
               autoSizeDiv={true}
               src={photoUrl}
               onLoad={this.onMediaLoad.bind(this,true)}
               onError={this.onMediaLoad.bind(this,false)}>
-            </LazyImage>
+            </Lightbox>
           </div>
         );
     }
