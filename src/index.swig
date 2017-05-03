@@ -29,13 +29,13 @@
       (https://developerscorner.storymaps.arcgis.com/grow-your-story-maps-audience-with-open-graph-tags-b7639cb65d5c)
   -->
   <title></title>
-  <meta name="description" content="">
+  <meta name="description" content="Use the map to share acts of kindness, service and compassionate action (you can be anonymous). Sharing reports lets us measure and discover the impact we're making as a Global Team. Let's Play Together, so Everyone Wins. Game On!">
 
   <!-- Social Sharing -->
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content=""/>
-  <meta property="og:description" content=""/>
-  <meta property="og:image" content=""/>
+  <meta property="og:title" content="Compassion Report Map"/>
+  <meta property="og:description" content="Use the map to share acts of kindness, service and compassionate action (you can be anonymous). Sharing reports lets us measure and discover the impact we're making as a Global Team. Let's Play Together, so Everyone Wins. Game On!"/>
+  <meta property="og:image" content="https://s3.amazonaws.com/compassiongamesmedia/compassionreports.jpg"/>
   <!-- END Social Sharing -->
 
   <script type="text/javascript">
