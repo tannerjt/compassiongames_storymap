@@ -66,6 +66,9 @@ export default class SelectedShares extends React.Component {
           ) : (
           <div className="padded-column">
           <div className="info-section">
+            <div className="social-shares">
+              <p>Share Me With Others</p>
+            </div>
             <h4 className="share-title">{attributes[this.props.primaryField]}</h4>
             <p className="share-location-wrapper"><small className="share-location">{attributes[this.props.secondaryField]}</small></p>
             { this.props.displayOrder.map(this.getFieldLayout.bind(this,attributes))}

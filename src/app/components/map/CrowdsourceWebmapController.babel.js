@@ -13,6 +13,7 @@ import ItemActions from 'babel/actions/ItemActions';
 import componentNames from 'babel/constants/componentNames/ComponentNames';
 import viewerText from 'i18n!translations/viewer/nls/template';
 import builderText from 'mode!isBuilder?i18n!translations/builder/nls/template';
+import { _getUrlVar } from 'babel/utils/url/urlhelper';
 
 const _logger = new Logger({
   source: 'Crowdsource Webmap Controller'
@@ -47,6 +48,11 @@ export const CrowdsourceWebmapController = class CrowdsourceWebmapController ext
   onMapLoad() {
     super.onMapLoad();
     this.createClusterLayer();
+
+    if (_getUrlVar('report')) {
+      console.log('select me please',+_getUrlVar('report') );
+      MapActions.selectFeature(+_getUrlVar('report'));
+    }
 
     if (this._settings.homeButton && this._settings.editable) {
       this._homeSettings = {
@@ -162,7 +168,7 @@ export const CrowdsourceWebmapController = class CrowdsourceWebmapController ext
 
                   if (thumbnail && photo) {
                     return true;
-                  } 
+                  }
                 }
                 return false;
               };

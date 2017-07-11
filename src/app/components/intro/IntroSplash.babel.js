@@ -5,10 +5,18 @@ import Loader from 'babel/components/helper/loading/Loader';
 import LazyImage from 'babel/components/helper/lazyImage/LazyImage';
 import InlineEditorWrapper from 'babel/components/forms/inlineEditor/InlineEditorWrapper';
 import builderText from 'mode!isBuilder?i18n!translations/builder/nls/template';
+import { _getUrlVar } from 'babel/utils/url/urlhelper';
 
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 export const IntroSplash = class IntroSplash extends React.Component {
+
+  componentDidMount() {
+    //jump to map if report is provided
+    if(_getUrlVar('report')) {
+      this.props.exploreAction();
+    }
+  }
 
   constructor(props) {
     super(props);
