@@ -13,7 +13,7 @@ export const IntroSplash = class IntroSplash extends React.Component {
 
   componentDidMount() {
     //jump to map if report is provided
-    if(_getUrlVar('report')) {
+    if (_getUrlVar('report')) {
       this.props.exploreAction();
     }
   }

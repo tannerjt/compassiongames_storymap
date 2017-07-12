@@ -19,6 +19,13 @@
     .featherlight-content {
       overflow: hidden !important;
     }
+    #share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+    }
   </style>
 
   <!-- htmlmin:ignore -->

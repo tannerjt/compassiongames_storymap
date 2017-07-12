@@ -283,6 +283,7 @@ module.exports = function (grunt) {
           Autolinker: 'lib/Autolinker.js/dist/Autolinker.min',
           autosize: 'lib/autosize/dist/autosize.min',
           featherlight: 'lib/featherlight/src/featherlight',
+          simpleShare: 'lib/rrssb/js/rrssb',
           // AMD Plugins
           mode: '../build/app/utils/amd/plugins/AppMode',
           i18n: 'lib/i18n/i18n'

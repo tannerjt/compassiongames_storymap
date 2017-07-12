@@ -50,7 +50,6 @@ export const CrowdsourceWebmapController = class CrowdsourceWebmapController ext
     this.createClusterLayer();
 
     if (_getUrlVar('report')) {
-      console.log('select me please',+_getUrlVar('report') );
       MapActions.selectFeature(+_getUrlVar('report'));
     }
 

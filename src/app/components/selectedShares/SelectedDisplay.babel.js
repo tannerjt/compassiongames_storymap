@@ -67,7 +67,15 @@ export default class SelectedShares extends React.Component {
           <div className="padded-column">
           <div className="info-section">
             <div className="social-shares">
-              <p>Share Me With Others</p>
+              <div id="share-buttons">
+                  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                  </a>
+
+                  <a href={`https://twitter.com/share?url=https://simplesharebuttons.com?${this.props.feature.attributes.OBJECTID}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons`} target="_blank">
+                      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                  </a>
+              </div>
             </div>
             <h4 className="share-title">{attributes[this.props.primaryField]}</h4>
             <p className="share-location-wrapper"><small className="share-location">{attributes[this.props.secondaryField]}</small></p>
