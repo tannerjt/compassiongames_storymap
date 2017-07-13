@@ -51,6 +51,21 @@ export const CrowdsourceWebmapController = class CrowdsourceWebmapController ext
 
     if (_getUrlVar('report')) {
       MapActions.selectFeature(+_getUrlVar('report'));
+
+      let cluster = this._map._layers.crowdsourceClusters;
+      let query = cluster._query;
+
+      query.objectIds = [+_getUrlVar('report')];
+      let p = cluster._queryFeatures(query);
+
+      p.then((r) => {
+        let feature=r.features[0];
+        
+        this._map.centerAndZoom(
+          feature.geometry,
+          9
+        );
+      });
     }
 
     if (this._settings.homeButton && this._settings.editable) {
