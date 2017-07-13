@@ -28,6 +28,32 @@ export default class SelectedShares extends React.Component {
     }
   }
 
+  getShareUrl(platform) {
+    const baseUrl = window.location.origin;
+    const text = "Here is my report on the compassion report map!  I invite you to add your own.";
+
+    const shareReportUrl = () => {
+      return baseUrl + "?report=" + this.props.feature.attributes.OBJECTID;
+    };
+
+    let twitterUrl = () => {
+      return "https://twitter.com/share?url=" + shareReportUrl() + "&amp;text=" + text + "&amp;hashtags=compassiongames";
+    };
+
+    let facebookUrl = () => {
+      return "http://www.facebook.com/sharer.php?u" + shareReportUrl();
+    };
+
+    switch (platform) {
+      case 'twitter':
+        return twitterUrl();
+      case 'facebook':
+        return facebookUrl();
+      default:
+        return 'oops';
+    }
+  }
+
   render() {
 
     const mainClasses = Helper.classnames([this.props.className,this.props.classNames,'selected-display']);
@@ -68,11 +94,12 @@ export default class SelectedShares extends React.Component {
           <div className="info-section">
             <div className="social-shares">
               <div id="share-buttons">
-                  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                  <span className="share-text">Share This Report</span> <span> </span>
+                  <a href={this.getShareUrl('facebook')} target="_blank">
                       <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
                   </a>
 
-                  <a href={`https://twitter.com/share?url=https://simplesharebuttons.com?${this.props.feature.attributes.OBJECTID}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons`} target="_blank">
+                  <a href={this.getShareUrl('twitter')} target="_blank">
                       <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
                   </a>
               </div>
