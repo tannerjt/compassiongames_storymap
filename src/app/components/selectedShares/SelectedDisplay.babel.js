@@ -31,9 +31,10 @@ export default class SelectedShares extends React.Component {
   getShareUrl(platform) {
     const baseUrl = window.location.origin;
     const text = "Here is my Compassion Games report!  I invite you to add your own.";
+    const urlPath = "/compassionreports/index.html";
 
     const shareReportUrl = () => {
-      return baseUrl + "?report=" + this.props.feature.attributes.OBJECTID;
+      return baseUrl + urlPath + "?report=" + this.props.feature.attributes.OBJECTID;
     };
 
     let twitterUrl = () => {
@@ -41,7 +42,7 @@ export default class SelectedShares extends React.Component {
     };
 
     let facebookUrl = () => {
-      return "http://www.facebook.com/sharer.php?u" + shareReportUrl();
+      return "http://www.facebook.com/sharer.php?u=" + shareReportUrl();
     };
 
     switch (platform) {
