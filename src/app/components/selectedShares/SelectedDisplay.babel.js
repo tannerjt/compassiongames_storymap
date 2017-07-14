@@ -30,7 +30,7 @@ export default class SelectedShares extends React.Component {
 
   getShareUrl(platform) {
     const baseUrl = window.location.origin;
-    const text = "Here is my report on the compassion report map!  I invite you to add your own.";
+    const text = "Here is my Compassion Games report!  I invite you to add your own.";
 
     const shareReportUrl = () => {
       return baseUrl + "?report=" + this.props.feature.attributes.OBJECTID;
